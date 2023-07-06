@@ -20,5 +20,10 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
+	private void OnSearchBarPressed(object sender, EventArgs e)
+	{
+		// todo
+	}
 }
 
