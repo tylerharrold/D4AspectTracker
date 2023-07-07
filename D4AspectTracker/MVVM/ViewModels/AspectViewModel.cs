@@ -4,11 +4,11 @@ namespace D4AspectTracker.MVVM.ViewModels
 {
     class AspectViewModel
     {
-        public Models.Aspect Aspect { get; set; }
+        public D4Aspect Aspect { get; set; }
 
         public AspectViewModel()
         {
-            Aspect = new Models.Aspect
+            Aspect = new D4Aspect
             {
                 AspectName = "Accelerating Aspect",
                 AspectType = AspectType.Range,

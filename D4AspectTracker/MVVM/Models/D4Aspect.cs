@@ -2,7 +2,7 @@
 
 namespace D4AspectTracker.MVVM.Models
 {
-    public class Aspect
+    public class D4Aspect
     {
         public string AspectName { get; set; }
         public AspectType AspectType { get; set; }

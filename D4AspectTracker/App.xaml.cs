@@ -8,6 +8,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AspectView();
+		MainPage = new AspectListView();
 	}
 }
