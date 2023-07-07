@@ -11,18 +11,17 @@
         <SearchBar Placeholder="Enter Aspect Name"
                    SearchButtonPressed="OnSearchBarPressed"/>
 
-        <ScrollView>
-            <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-                <Label
-                Text="Vertical Stack Layout"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            </VerticalStackLayout>
-    </ScrollView>
+        <CollectionView ItemsSource="{Binding Aspects}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Label Text="{Binding AspectName}"/>
+                        
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
 
     </VerticalStackLayout>
 

@@ -2,7 +2,7 @@
 
 namespace D4AspectTracker
 {
-    internal enum ItemSlot
+    public enum ItemSlot
     {
         HELM,
         CHEST,

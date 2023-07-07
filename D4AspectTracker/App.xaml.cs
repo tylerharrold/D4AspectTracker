@@ -1,4 +1,6 @@
-﻿namespace D4AspectTracker;
+﻿using D4AspectTracker.MVVM.Views;
+
+namespace D4AspectTracker;
 
 public partial class App : Application
 {
@@ -6,6 +8,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new AspectView();
 	}
 }

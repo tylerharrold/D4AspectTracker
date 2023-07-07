@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="D4AspectTracker.MVVM.Views.AspectView"
+             Title="AspectView">
+    
+    <VerticalStackLayout>
+        <Label Text="D4 Aspect Tracker" 
+               HorizontalTextAlignment="Center" 
+               BackgroundColor="Firebrick"
+               FontSize="32"/>
+
+        <SearchBar Placeholder="Enter Aspect Name"
+                   SearchButtonPressed="OnSearchBarPressed"/>
+
+
+        <Label Text="{Binding Aspect.AspectName}"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>
