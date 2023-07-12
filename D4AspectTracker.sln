@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D4AspectTracker", "D4AspectTracker\D4AspectTracker.csproj", "{F5B8D08F-18A0-47F1-BEB1-8B25135A25A4}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DataSeedFormatter", "DataSeedFormatter\DataSeedFormatter.pyproj", "{6CFEEA03-B621-4018-A123-A0E510AE92EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,8 @@ Global
 		{F5B8D08F-18A0-47F1-BEB1-8B25135A25A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5B8D08F-18A0-47F1-BEB1-8B25135A25A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5B8D08F-18A0-47F1-BEB1-8B25135A25A4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6CFEEA03-B621-4018-A123-A0E510AE92EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFEEA03-B621-4018-A123-A0E510AE92EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

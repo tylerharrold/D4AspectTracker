@@ -12,6 +12,8 @@ namespace D4AspectTracker.MVVM.Models
         // this is the table for aspect definitions, so there only needs to be one
         [MaxLength(250) , Unique]
         public string AspectName { get; set; }
+
+        
         public AspectType AspectType { get; set; }
         public AspectCategory AspectCategory { get; set; }
         public double MinRangeValue { get; set; }

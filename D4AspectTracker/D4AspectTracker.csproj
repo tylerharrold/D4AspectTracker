@@ -68,4 +68,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Utility\" />
+	</ItemGroup>
+
 </Project>

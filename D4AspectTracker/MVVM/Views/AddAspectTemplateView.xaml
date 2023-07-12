@@ -112,7 +112,12 @@
             <Entry x:Name="StaticValue"/>
         </HorizontalStackLayout>
 
-        
+        <!-- Complete Entry Button is hidden until an aspect type has been chosen-->
+        <Button x:Name="AddAspectButton"
+                Text="Add Aspect Template"
+                IsVisible="False"
+                Clicked="AddAspectButton_Clicked"/>
+
 
 
 
