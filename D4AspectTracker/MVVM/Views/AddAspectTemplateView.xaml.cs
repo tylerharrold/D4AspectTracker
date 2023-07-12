@@ -20,11 +20,7 @@ public partial class AddAspectTemplateView : ContentPage
 
     private void RadioSetValue_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        SetValueEntry.IsVisible = e.Value;
-        if (!e.Value)
-        {
-            SetRollValue.Text = "";
-        }
+        // Set values have no template value, so we don't need to dynamically show any new entry controls
         
     }
 

@@ -16,7 +16,6 @@ namespace D4AspectTracker.MVVM.Models
         public AspectCategory AspectCategory { get; set; }
         public double MinRangeValue { get; set; }
         public double MaxRangeValue { get; set; }
-        public double FlatValue { get; set; }
         public string StaticValue { get; set; }
         public string Img { get; set; }
 
@@ -26,7 +25,8 @@ namespace D4AspectTracker.MVVM.Models
     {
         Range,
         Value,
-        Static
+        Static,
+        Unique
     }
 
     public enum AspectCategory
@@ -35,6 +35,7 @@ namespace D4AspectTracker.MVVM.Models
         Defensive,
         Resource,
         Utility,
-        Mobility
+        Mobility,
+        Unique
     }
 }
