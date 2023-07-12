@@ -25,6 +25,7 @@
 
         </CollectionView>
         <Button x:Name="AddTestData"
-                Text="Push for Another Aspect"/>
+                Text="Push for Another Aspect"
+                VerticalOptions="End"/>
     </VerticalStackLayout>
 </ContentPage>

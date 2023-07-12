@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="D4AspectTracker.MVVM.Views.AddAspectTemplateView"
+             Title="AddAspectTemplateView">
+    <VerticalStackLayout>
+        <Label   
+                   BackgroundColor="Red"
+                   Text="Dibalo 4 Aspect Tracker"
+                   FontSize="32"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+        <Label   
+                   BackgroundColor="Red"
+                   Text="Add Aspect"
+                   FontSize="22"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+        
+        <Label   
+                   Text="Enter Aspect Name"
+                   FontSize="18"/>
+        <Entry x:Name="AspectNameEntry"
+               TextColor="White"
+               Placeholder="Enter Aspect Name"/>
+        
+        <Label   
+                   Text="Aspect Type:"
+                   FontSize="18"/>
+        
+        <!-- NOTE: This setup uses radio buttons for fast prototyping, but... --> 
+        <!-- it is NOT flexible with the enum type used by the D4Aspect class -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <RadioButton GroupName="AspectType"
+                         Grid.Row="0"/>
+            <Label Text="Ranged Roll"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+            <RadioButton GroupName="AspectType"
+                         Grid.Row="1"/>
+            <Label Text="Set Value"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+            <RadioButton GroupName="AspectType"
+                         Grid.Row="2"/>
+            <Label Text="Static Value"
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+        </Grid>
+        
+        <!-- Entry Section for Ranged Roll Aspects -->
+        <VerticalStackLayout x:Name="RangedRollEntry">
+            <Entry />
+            <Label Text="Further Data Input Above"/>
+        </VerticalStackLayout>
+        
+        <!-- Entry Section for Set Value Rolls-->
+        <VerticalStackLayout x:Name="SetValueEntry">
+            <Entry />
+            <Label Text="Further Data Input Above"/>
+        </VerticalStackLayout>
+
+        <!-- Entry Section for Static Value Rolls-->
+        <VerticalStackLayout x:Name="StaticValueEntry">
+            <Entry />
+            <Label Text="Further Data Input Above"/>
+        </VerticalStackLayout>
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

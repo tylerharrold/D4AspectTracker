@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="D4AspectTracker.MVVM.Views.MainAspectPageView"
+             Title="MainAspectPageView">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            
+            <BoxView Grid.Row="0"
+                     Color="Red"/>
+            <Label   
+                   Grid.Row="0"
+                   BackgroundColor="Red"
+                   Text="Dibalo 4 Aspect Tracker"
+                   FontSize="32"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+            
+
+            <StackLayout Grid.Row="1">
+            <ScrollView Grid.Row="1">
+                <CollectionView ItemsSource="{Binding Aspects}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Label Text="{Binding AspectName}"
+                                       VerticalOptions="Center"
+                                       TextColor="White"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+               
+            </ScrollView>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+            <Button x:Name="BtnAddNewAspect"
+                    Grid.Row="2"
+                    Text="Add new Aspect Template"
+                    Clicked="BtnAddNewAspect_Clicked"/>
+            </StackLayout>
+
+        </Grid>
+    </StackLayout>
+</ContentPage>
