@@ -41,39 +41,61 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <RadioButton GroupName="AspectType"
-                         Grid.Row="0"/>
+                         Grid.Row="0"
+                         x:Name="RadioRangedRoll"
+                         CheckedChanged="RadioRangedRoll_CheckedChanged"/>
             <Label Text="Ranged Roll"
                    Grid.Row="0"
                    Grid.Column="1"/>
             <RadioButton GroupName="AspectType"
-                         Grid.Row="1"/>
+                         Grid.Row="1"
+                         x:Name="RadioSetValue"
+                         CheckedChanged="RadioSetValue_CheckedChanged"/>
             <Label Text="Set Value"
                    Grid.Row="1"
                    Grid.Column="1"/>
             <RadioButton GroupName="AspectType"
-                         Grid.Row="2"/>
+                         Grid.Row="2"
+                         x:Name="RadioStaticValue"
+                         CheckedChanged="RadioStaticValue_CheckedChanged"/>
             <Label Text="Static Value"
                    Grid.Row="2"
                    Grid.Column="1"/>
         </Grid>
         
         <!-- Entry Section for Ranged Roll Aspects -->
-        <VerticalStackLayout x:Name="RangedRollEntry">
-            <Entry />
-            <Label Text="Further Data Input Above"/>
+        <VerticalStackLayout x:Name="RangedRollEntry"
+                             IsVisible="False">
+            <Grid RowDefinitions="* , *"
+                  ColumnDefinitions="* , *">
+                <Label Text="Min Roll Value:"
+                        Grid.Row="0"/>
+                <Entry Grid.Row="0"
+                       Grid.Column="1"
+                       x:Name="MinRollValue"/>
+
+                <Label Text="Min Roll Value:"
+                        Grid.Row="1"/>
+                <Entry Grid.Row="1"
+                       Grid.Column="1"
+                       x:Name="MaxRollValue"/>
+
+            </Grid>
         </VerticalStackLayout>
         
         <!-- Entry Section for Set Value Rolls-->
-        <VerticalStackLayout x:Name="SetValueEntry">
-            <Entry />
-            <Label Text="Further Data Input Above"/>
-        </VerticalStackLayout>
+        <HorizontalStackLayout x:Name="SetValueEntry"
+                               IsVisible="False">
+            <Label Text="Set Roll Value:"/>
+            <Entry x:Name="SetRollValue"/>
+        </HorizontalStackLayout>
 
         <!-- Entry Section for Static Value Rolls-->
-        <VerticalStackLayout x:Name="StaticValueEntry">
-            <Entry />
-            <Label Text="Further Data Input Above"/>
-        </VerticalStackLayout>
+        <HorizontalStackLayout x:Name="StaticValueEntry"
+                               IsVisible="False">
+            <Label Text="Static Value Text:"/>
+            <Entry x:Name="StaticValue"/>
+        </HorizontalStackLayout>
 
 
 

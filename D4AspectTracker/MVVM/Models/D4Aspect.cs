@@ -15,7 +15,7 @@ namespace D4AspectTracker.MVVM.Models
         public AspectType AspectType { get; set; }
         public double MinRangeValue { get; set; }
         public double MaxRangeValue { get; set; }
-        public int FlatValue { get; set; }
+        public double FlatValue { get; set; }
         public string StaticValue { get; set; }
 
     }
