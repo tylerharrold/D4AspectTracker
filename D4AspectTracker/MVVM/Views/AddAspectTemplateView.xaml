@@ -24,10 +24,25 @@
                TextColor="White"
                Placeholder="Enter Aspect Name"/>
         
+        
+
+        <Picker x:Name="AspectCategoryPicker"
+                Title="Select Aspect Category:">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Offensive Aspect</x:String>
+                    <x:String>Defensive Aspect</x:String>
+                    <x:String>Resource Aspect</x:String>
+                    <x:String>Utility Aspect</x:String>
+                    <x:String>Mobility Aspect</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
         <Label   
                    Text="Aspect Type:"
                    FontSize="18"/>
-        
+
         <!-- NOTE: This setup uses radio buttons for fast prototyping, but... --> 
         <!-- it is NOT flexible with the enum type used by the D4Aspect class -->
         <Grid>
@@ -96,6 +111,8 @@
             <Label Text="Static Value Text:"/>
             <Entry x:Name="StaticValue"/>
         </HorizontalStackLayout>
+
+        
 
 
 
