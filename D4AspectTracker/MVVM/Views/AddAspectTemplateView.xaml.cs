@@ -54,13 +54,17 @@ public partial class AddAspectTemplateView : ContentPage
         else
         {
             // if everything is all set we call to AddAspectViewModel.AddPerson() to add to db
+            // need to quickly format numerical values
+            double minVal, maxVal;
+            minVal = FormatValue(MinRollValue.Text);
+            maxVal = FormatValue(MaxRollValue.Text);
+            App.AddAspectVM.AddNewD4Aspect(AspectNameEntry.Text , _aspectType , AspectCategoryPicker.SelectedItem.ToString() , 
+                minVal , maxVal , StaticValue.Text);
+
             
+
+            // TODO pop error message if we get error from db entry
         }
-
-
-
-
-        // pop error message if we get error from db entry
     }
 
     private void TurnOnAddAspectButton()
@@ -107,5 +111,31 @@ public partial class AddAspectTemplateView : ContentPage
         allDataEntered = true;
 
         return allDataEntered;     
+    }
+
+
+    // this function takes a string intended to represent a double and parses it into a double
+    // HOWEVER any exceptions generated result in just formatting the string to 0.0. This is safe, but not ideal,
+    // we should force correct entry in the case of a format exception, because user has made input error
+    private double FormatValue(string s)
+    {
+        double val = 0.0;
+        try
+        {
+            val = Double.Parse(s);
+        }
+        catch(Exception ex)
+        {
+           if(ex.InnerException is ArgumentNullException)
+            {
+                val = 0.0;  
+            }
+           if(ex.InnerException is FormatException)
+            {
+                val = 0.0;
+            }
+        }
+
+        return val;
     }
 }

@@ -1,8 +1,11 @@
 ﻿using SQLite;
 using D4AspectTracker.MVVM.Models;
+using System.Diagnostics;
 
 namespace D4AspectTracker.MVVM.ViewModels
 {
+    // TODO i have accidentally conflated a viewmodel and a db utility class here. This is misnamed, should not be a vew model,
+    //      this becomes a singleton of the app, should be used by a viewmodel not be named a viewmodel
     public class AddAspectViewModel
     {
         private string _dbPath;
@@ -32,11 +35,15 @@ namespace D4AspectTracker.MVVM.ViewModels
         }
 
         public void AddNewD4Aspect(string aspectName , string aspectType, string aspectCategory , double minRangeVal,
-            double maxRangeVal , string staticVal , string imgPath)
+            double maxRangeVal , string staticVal)
         {
             // setup aspect to add
             D4Aspect aspect = GetNewAspect(aspectName , aspectType , aspectCategory , minRangeVal , maxRangeVal , staticVal);
 
+            // test print lol
+            //Debug.Print($"new aspect created:\nAspect Name:{aspect.AspectName}\nAspect Type:{aspect.AspectType}\nAspect Category:{aspect.AspectCategory}\nMin Range:{aspect.MinRangeValue}\nMaxRange:{aspect.MaxRangeValue}\nStatic Val:{aspect.StaticValue}");
+
+            
             int result = 0;
             try
             {
@@ -49,6 +56,7 @@ namespace D4AspectTracker.MVVM.ViewModels
             {
                 StatusMessage = ex.Message;
             }
+            
         }
 
 
@@ -89,15 +97,16 @@ namespace D4AspectTracker.MVVM.ViewModels
         // assigns the aspect category based on input string
         private AspectCategory GetAspectCategory(string aspectCategory)
         {
+
             switch(aspectCategory)
             {
-                case "mobility":
+                case "Mobility Aspect":
                     return AspectCategory.Mobility;
-                case "defensive":
+                case "Defensive Aspect":
                     return AspectCategory.Defensive;
-                case "utility":
+                case "Utility Aspect":
                     return AspectCategory.Utility;
-                case "resource":
+                case "Resource Aspect":
                     return AspectCategory.Resource;
                 default:
                     return AspectCategory.Offensive;
