@@ -54,6 +54,7 @@ public partial class AddAspectTemplateView : ContentPage
         else
         {
             // if everything is all set we call to AddAspectViewModel.AddPerson() to add to db
+            
         }
 
 

@@ -27,8 +27,7 @@ namespace D4AspectTracker.MVVM.Models
     {
         Range,
         Value,
-        Static,
-        Unique
+        Static
     }
 
     public enum AspectCategory
