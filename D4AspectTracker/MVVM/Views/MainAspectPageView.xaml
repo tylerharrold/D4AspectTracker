@@ -4,6 +4,7 @@
              x:Class="D4AspectTracker.MVVM.Views.MainAspectPageView"
              Title="MainAspectPageView">
     <StackLayout>
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
@@ -32,12 +33,15 @@
                 <CollectionView ItemsSource="{Binding Aspects}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Padding="5">
+                            <Grid Padding="5" ColumnDefinitions="*,*">
                                 <Label Text="{Binding AspectName}"
                                        VerticalOptions="Center"
                                        TextColor="White"/>
+                                <Image Source="defensive_aspect.png"
+                                       Grid.Column="1"
+                                       HeightRequest="100"/>
 
-                            </Grid>
+                                </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
@@ -51,7 +55,10 @@
                     Text="Add new Aspect Template"
                     Clicked="BtnAddNewAspect_Clicked"/>
             </StackLayout>
+           
 
         </Grid>
+
+        
     </StackLayout>
 </ContentPage>
