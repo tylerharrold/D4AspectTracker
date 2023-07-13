@@ -34,15 +34,22 @@
                     <CollectionView ItemsSource="{Binding AllAspects}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="5" ColumnDefinitions="*,*">
-                                    <Label Text="{Binding AspectName}"
+                                <Grid Padding="5" ColumnDefinitions="*,10*, *">
+                                <Image Source="{Binding Img}"
+                                           Grid.Column="0"
+                                           HeightRequest="100" 
+                                           HorizontalOptions="Start"/>
+                                <Label Grid.Column="1"
+                                        Text="{Binding AspectName}"
                                        VerticalOptions="Center"
-                                       TextColor="White"/>
-                                    <Image Source="{Binding Img}"
-                                       Grid.Column="1"
-                                       HeightRequest="100"/>
+                                       TextColor="White"
+                                       HorizontalOptions="Start"
+                                       Padding="10"/>
+                                <Label Text="{Binding AspectType}"
+                                       Grid.Column="2"/>
 
-                                </Grid>
+
+                            </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
