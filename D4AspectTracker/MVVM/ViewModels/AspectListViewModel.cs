@@ -5,10 +5,13 @@ namespace D4AspectTracker.MVVM.ViewModels
 {
     internal class AspectListViewModel
     {
-        public ObservableCollection<D4Aspect> Aspects { get; set; }
+        //public ObservableCollection<D4Aspect> Aspects { get; set; }
+        public List<D4Aspect> AllAspects { get; set; }
 
         public AspectListViewModel() 
         {
+            AllAspects = App.AddAspectVM.GetAllD4Aspects();
+            /*
             Aspects = new ObservableCollection<D4Aspect>();
 
             Aspects.Add(new D4Aspect
@@ -33,10 +36,12 @@ namespace D4AspectTracker.MVVM.ViewModels
                 MinRangeValue = 2,
                 MaxRangeValue = 3
             });
+            */
         }
 
         public void OnAddAnotherD4Aspect(object sender, EventArgs e)
         {
+            /*
             Aspects.Add(new D4Aspect
             {
                 AspectName = "Balanced Aspect",
@@ -44,6 +49,7 @@ namespace D4AspectTracker.MVVM.ViewModels
                 MinRangeValue = 30,
                 MaxRangeValue = 50
             });
+            */
         }
 
     }

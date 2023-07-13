@@ -10,10 +10,8 @@ public partial class App : Application
 	public App(AddAspectViewModel aavm)
 	{
 		InitializeComponent();
-
-		MainPage = new NavigationPage(new MainAspectPageView());
-
-		AddAspectVM = aavm;
+        AddAspectVM = aavm;
+        MainPage = new NavigationPage(new MainAspectPageView());
 
 	}
 }

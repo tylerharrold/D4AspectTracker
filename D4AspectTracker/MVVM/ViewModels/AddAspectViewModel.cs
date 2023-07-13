@@ -59,6 +59,21 @@ namespace D4AspectTracker.MVVM.ViewModels
             
         }
 
+        public List<D4Aspect> GetAllD4Aspects()
+        {
+            try
+            {
+                Init();
+                return _connection.Table<D4Aspect>().ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Failed to retrieve data{ex.Message}";
+            }
+
+            return new List<D4Aspect>();
+        }
+
 
 
         // function to propertly set up the D4Aspect to be entered into database
