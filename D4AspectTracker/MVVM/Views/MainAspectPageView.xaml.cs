@@ -5,16 +5,26 @@ namespace D4AspectTracker.MVVM.Views;
 
 public partial class MainAspectPageView : ContentPage
 {
+    private AspectListViewModel aspectListViewModel;
+
 	public MainAspectPageView()
 	{
 		InitializeComponent();
 
-		BindingContext = new AspectListViewModel();
+        aspectListViewModel = new AspectListViewModel();
+        BindingContext = aspectListViewModel;
 	}
 
     private void BtnAddNewAspect_Clicked(object sender, EventArgs e)
     {
 		Navigation.PushAsync(new AddAspectTemplateView());
 		
+    }
+
+    protected override void OnAppearing()
+    {
+        Debug.Print("got here"); 
+        base.OnAppearing();
+        aspectListViewModel.RefreshAllAspects();
     }
 }

@@ -28,26 +28,26 @@
                    VerticalOptions="Center"/>
             
 
-            <StackLayout Grid.Row="1">
-            <ScrollView Grid.Row="1">
-                <CollectionView ItemsSource="{Binding AllAspects}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Padding="5" ColumnDefinitions="*,*">
-                                <Label Text="{Binding AspectName}"
+            
+                <ScrollView Grid.Row="1"
+                            HeightRequest="550">
+                    <CollectionView ItemsSource="{Binding AllAspects}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="5" ColumnDefinitions="*,*">
+                                    <Label Text="{Binding AspectName}"
                                        VerticalOptions="Center"
                                        TextColor="White"/>
-                                <Image Source="{Binding Img}"
+                                    <Image Source="{Binding Img}"
                                        Grid.Column="1"
                                        HeightRequest="100"/>
 
                                 </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-               
-            </ScrollView>
-            </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            
 
             <StackLayout Grid.Row="2">
             <Button x:Name="BtnAddNewAspect"

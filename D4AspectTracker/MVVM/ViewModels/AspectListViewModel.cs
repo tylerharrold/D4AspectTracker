@@ -6,11 +6,11 @@ namespace D4AspectTracker.MVVM.ViewModels
     internal class AspectListViewModel
     {
         //public ObservableCollection<D4Aspect> Aspects { get; set; }
-        public List<D4Aspect> AllAspects { get; set; }
+        public ObservableCollection<D4Aspect> AllAspects { get; set; }
 
         public AspectListViewModel() 
         {
-            AllAspects = App.AddAspectVM.GetAllD4Aspects();
+            AllAspects = new ObservableCollection<D4Aspect>(App.AddAspectVM.GetAllD4Aspects());
             /*
             Aspects = new ObservableCollection<D4Aspect>();
 
@@ -37,6 +37,12 @@ namespace D4AspectTracker.MVVM.ViewModels
                 MaxRangeValue = 3
             });
             */
+        }
+
+        public void RefreshAllAspects()
+        {
+            // manually garbage collect here???
+            AllAspects = new ObservableCollection<D4Aspect>(App.AddAspectVM.GetAllD4Aspects());
         }
 
         public void OnAddAnotherD4Aspect(object sender, EventArgs e)

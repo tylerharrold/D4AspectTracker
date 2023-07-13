@@ -2,6 +2,10 @@ using System.Diagnostics;
 
 namespace D4AspectTracker.MVVM.Views;
 
+
+// TOTO this class should take a reference to the previous pages list of aspects so that that list can be updated
+// so that the collection view will (hopefully) update along side it. right now i am just reacquiring the whole list
+// which doesn't seem to be triggering the update event for the collection view
 public partial class AddAspectTemplateView : ContentPage
 {
 
