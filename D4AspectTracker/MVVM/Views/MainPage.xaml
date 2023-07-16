@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="D4AspectTracker.MVVM.Views.MainPage"
+             Title="MainPage">
+    <VerticalStackLayout>
+        <Image Source="d4logo.png"
+               HeightRequest="100"/>
+        <Label 
+            Text="Aspect Tracker"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="22"/>
+        <Button Text="Search Rolls"/>
+        <Button Text="Add New Aspect Roll"/>
+        <Button Text="Create New Aspect Template"/>
+        <Button Text="Examine Aspects"/>
+    </VerticalStackLayout>
+</ContentPage>

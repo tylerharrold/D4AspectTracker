@@ -2,6 +2,7 @@
 using System.Text;
 using D4AspectTracker.Utility;
 using D4AspectTracker.MVVM.ViewModels;
+using System.Diagnostics;
 
 namespace D4AspectTracker;
 
@@ -19,9 +20,15 @@ public static class MauiProgram
 			});
 
 		// add string path to where db will be stored on disk
-		string dbPath = FileAccessHelper.GetLocalFilePath("d4aspect.db3");
-		// use dependency injection to add singleton AddAspectViewModel class to application
-		builder.Services.AddSingleton<AddAspectViewModel>(s => ActivatorUtilities.CreateInstance<AddAspectViewModel>(s, dbPath));
+
+		// TODO - uncomment
+		// string dbPath = FileAccessHelper.GetLocalFilePath("d4aspect.db3");
+
+		// TODO - delete, the following is for testing purposes
+		string dbPath = @"V:\MAUI_db_testing\d4aspect_TESTING.db";
+		
+        // use dependency injection to add singleton AddAspectViewModel class to application
+        builder.Services.AddSingleton<AddAspectViewModel>(s => ActivatorUtilities.CreateInstance<AddAspectViewModel>(s, dbPath));
 
 #if DEBUG
 		builder.Logging.AddDebug();

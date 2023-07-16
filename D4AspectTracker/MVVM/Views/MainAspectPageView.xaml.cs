@@ -21,9 +21,9 @@ public partial class MainAspectPageView : ContentPage
 		
     }
 
+    //TODO this is not having intended effect
     protected override void OnAppearing()
     {
-        Debug.Print("got here"); 
         base.OnAppearing();
         aspectListViewModel.RefreshAllAspects();
     }

@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\d4logo.png" />
 	  <None Remove="Resources\Images\defensive_aspect.png" />
 	  <None Remove="Resources\Images\mobility_aspect.png" />
 	  <None Remove="Resources\Images\offensive_aspect.png" />
@@ -62,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="MVVM\Views\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Views\AddAspectTemplateView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
