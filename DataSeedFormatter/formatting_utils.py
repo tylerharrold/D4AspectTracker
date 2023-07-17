@@ -29,3 +29,17 @@ def get_type(description):
     else:
         return "Static"
 
+#########################
+# Get Range Roll Values
+#   if the aspect is of the type Range, get the min/max possible roll for the aspect (noted in effect description as {x/y})
+#   and return them as strings, if the aspect is not a range roll, return NULL values
+#########################
+def get_range_rolls(aspect_type , aspect_effect):
+    if(aspect_type == "Ranged"):
+        brace_start_index , brace_end_index = aspect_effect.find("{") , aspect_effect.find("}")
+        substr = aspect_effect[brace_start_index + 1:brace_end_index]
+        min_val_str , max_val_str = substr.split("/")
+        return min_val_str , max_val_str
+    else:
+        return "", ""
+

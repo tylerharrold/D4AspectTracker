@@ -35,6 +35,10 @@ for aspects in aspect_data:
     aspects[TYPE] = utils.get_type(aspects[EFFECT])
 
 # set range roll values (if applicable) and static_desc (if applicable)
+for aspects in aspect_data:
+    aspects[MIN_RANGE] , aspects[MAX_RANGE] = utils.get_range_rolls(aspects[TYPE] , aspects[EFFECT])
+
+
 
 
 
