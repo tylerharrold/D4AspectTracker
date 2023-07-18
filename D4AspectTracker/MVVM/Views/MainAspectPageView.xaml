@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xconverters="clr-namespace:D4AspectTracker.Utility.Converters"
              x:Class="D4AspectTracker.MVVM.Views.MainAspectPageView"
              Title="MainAspectPageView">
+    <ContentPage.Resources>
+        <xconverters:CategoryToImgPathConverter x:Key="imgConverter"/>
+    </ContentPage.Resources>
     <StackLayout>
         
         <Grid>
@@ -35,7 +39,7 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Grid Padding="5" ColumnDefinitions="*,10*, *">
-                                <Image Source="{Binding Img}"
+                                <Image Source="{Binding AspectCategory , Converter={StaticResource imgConverter}}"
                                            Grid.Column="0"
                                            HeightRequest="100" 
                                            HorizontalOptions="Start"/>
