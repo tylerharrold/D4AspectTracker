@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6cfeea03-b621-4018-a123-a0e510ae92ee</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>DataSeedFormatter.py</StartupFile>
+    <StartupFile>DB_Manager.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,6 +24,9 @@
   <ItemGroup>
     <Compile Include="DataSeedFormatter.py" />
     <Compile Include="formatting_utils.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DB_Manager.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

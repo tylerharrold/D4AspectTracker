@@ -38,9 +38,17 @@ for aspects in aspect_data:
 for aspects in aspect_data:
     aspects[MIN_RANGE] , aspects[MAX_RANGE] = utils.get_range_rolls(aspects[TYPE] , aspects[EFFECT])
 
+# the static value range should just be a match for the items description (we will assign this even for non static rolls just to have easy access in db 
+# to the aspect description)
+for aspects in aspect_data:
+    aspects[STATIC_DESC] = aspects[EFFECT]
 
+# for db insertion aspects should be a list of tuples
+aspect_tuples = []
+for aspects in aspect_data:
+    aspect_tuples.append( (aspects[NAME] , aspects[TYPE] , aspects[CATEGORY] , aspects[MIN_RANGE] , aspects[MAX_RANGE] , aspects[EFFECT]) )
 
-
+aspect_data=aspect_tuples
 
 
 

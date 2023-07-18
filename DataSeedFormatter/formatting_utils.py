@@ -39,7 +39,7 @@ def get_range_rolls(aspect_type , aspect_effect):
         brace_start_index , brace_end_index = aspect_effect.find("{") , aspect_effect.find("}")
         substr = aspect_effect[brace_start_index + 1:brace_end_index]
         min_val_str , max_val_str = substr.split("/")
-        return min_val_str , max_val_str
+        return float(min_val_str) , float(max_val_str)
     else:
-        return "", ""
+        return 0.0, 0.0
 

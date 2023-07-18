@@ -18,6 +18,8 @@ namespace D4AspectTracker.MVVM.Models
         public AspectCategory AspectCategory { get; set; }
         public double MinRangeValue { get; set; }
         public double MaxRangeValue { get; set; }
+
+        // the static value is also really just the effect description
         public string StaticValue { get; set; }
         public string Img { get; set; }
 
