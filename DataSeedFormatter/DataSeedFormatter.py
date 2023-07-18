@@ -1,3 +1,4 @@
+from gettext import Catalog
 import formatting_utils as utils
 
 # aliasing for aspect list elements
@@ -42,6 +43,10 @@ for aspects in aspect_data:
 # to the aspect description)
 for aspects in aspect_data:
     aspects[STATIC_DESC] = aspects[EFFECT]
+
+# format aspect category into int values to match enums used in aspect model
+for aspects in aspect_data:
+    aspects[CATEGORY] = utils.format_aspect_category(aspects[CATEGORY])
 
 # for db insertion aspects should be a list of tuples
 aspect_tuples = []

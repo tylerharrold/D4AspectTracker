@@ -12,7 +12,8 @@ public partial class App : Application
 	{
 		InitializeComponent();
         AddAspectVM = aavm;
-        MainPage = new NavigationPage(new D4AspectTracker.MVVM.Views.MainPage());
+        //MainPage = new NavigationPage(new D4AspectTracker.MVVM.Views.MainPage());
+        MainPage = new NavigationPage(new D4AspectTracker.MVVM.Views.MainAspectPageView());
 
     }
 }

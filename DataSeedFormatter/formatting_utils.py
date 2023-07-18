@@ -18,16 +18,18 @@ def format_names(s):
 #       Ranged: apects with ranged rolls will have numbers of the format {x/y} present in their effect description
 #       Value: aspects with a set roll will have {#} present in their effect description
 #       Static: static aspect effects will simply have a description with no {} denoted values present
+#       NOTE: the object model we use for d4aspects in the application uses an enum for type, so return values are matched to those values
+#           this is poor practice, but im just trying to get this thing done lmfao
 #########################
 def get_type(description):
     if("{" in description):
         # its either ranged, or value
         if("{#" in description):
-            return "Value"
+            return 1
         else:
-            return "Ranged"
+            return 0
     else:
-        return "Static"
+        return 2
 
 #########################
 # Get Range Roll Values
@@ -42,4 +44,25 @@ def get_range_rolls(aspect_type , aspect_effect):
         return float(min_val_str) , float(max_val_str)
     else:
         return 0.0, 0.0
+
+#########################
+# Format AspectCategory
+#   The object model for d4aspects in our application uses an enum to store category, so we need to convert from string to int
+#       matching the enum, bad practice here, but i'm doing it for the sake of just wrapping this up before diablo 4 season 1 launches
+#########################
+def format_aspect_category(cat):
+    match cat:
+        case "Offensive":
+            return 0
+        case "Defensive":
+            return 1
+        case "Resource":
+            return 2
+        case "Utility":
+            return 3
+        case "Mobility":
+            return 4
+        case _:
+            return 5
+
 

@@ -22,8 +22,7 @@ public static class MauiProgram
 		// add string path to where db will be stored on disk
 
 		// TODO - uncomment
-		// string dbPath = FileAccessHelper.GetLocalFilePath("d4aspect.db3");
-
+		//string dbPath = FileAccessHelper.GetLocalFilePath("d4aspect.db3");
 		// TODO - delete, the following is for testing purposes
 		string dbPath = @"V:\MAUI_db_testing\d4aspect_TESTING.db";
 		

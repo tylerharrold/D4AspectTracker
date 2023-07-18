@@ -13,6 +13,8 @@ public partial class MainAspectPageView : ContentPage
 
         aspectListViewModel = new AspectListViewModel();
         BindingContext = aspectListViewModel;
+
+        
 	}
 
     private void BtnAddNewAspect_Clicked(object sender, EventArgs e)

@@ -32,6 +32,8 @@ namespace D4AspectTracker.MVVM.ViewModels
             // 
             _connection = new SQLiteConnection(_dbPath);
             _connection.CreateTable<D4Aspect>(); // this will not create a new table if one already exists
+
+            
         }
 
         public void AddNewD4Aspect(string aspectName , string aspectType, string aspectCategory , double minRangeVal,
