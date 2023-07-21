@@ -6,6 +6,7 @@
     <VerticalStackLayout>
         <Image Source="d4logo.png"
                HeightRequest="100"/>
-        <SearchBar Placeholder="Search Aspect Type..."/>
+        <SearchBar  x:Name="schAspect"
+                    Placeholder="Search Aspect Type..."/>
     </VerticalStackLayout>
 </ContentPage>
