@@ -23,6 +23,12 @@ namespace D4AspectTracker.MVVM.ViewModels
             navigation.PushAsync(new MainAspectPageView());
         }
 
+        public void OnBtnAddRoll(object o , EventArgs e)
+        {
+            INavigation navigation = App.Current.MainPage.Navigation;
+            navigation.PushAsync(new AddRollView());
+        }
+
 
 
    

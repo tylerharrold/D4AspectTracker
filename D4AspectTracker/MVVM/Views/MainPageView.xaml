@@ -13,7 +13,10 @@
             HorizontalOptions="Center" 
             FontSize="22"/>
         <Button Text="Search Rolls"/>
-        <Button Text="Add New Aspect Roll"/>
+        
+        <Button x:Name="btnAddRoll"
+                Text="Add New Aspect Roll"/>
+        
         <Button Text="Create New Aspect Template"/>
         <Button x:Name="btnExamineAspects"
                 Text="Examine Aspects"/>

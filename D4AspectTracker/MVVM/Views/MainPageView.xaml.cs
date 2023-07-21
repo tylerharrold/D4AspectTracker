@@ -14,6 +14,7 @@ public partial class MainPageView : ContentPage
         InitializeComponent();
         BindingContext = _viewModel;
         btnExamineAspects.Clicked += _viewModel.OnBtnExamineAspectsClicked;
+        btnAddRoll.Clicked += _viewModel.OnBtnAddRoll;
     }
 
  
