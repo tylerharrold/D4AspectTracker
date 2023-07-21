@@ -62,7 +62,7 @@ public partial class AddAspectTemplateView : ContentPage
             double minVal, maxVal;
             minVal = FormatValue(MinRollValue.Text);
             maxVal = FormatValue(MaxRollValue.Text);
-            App.AddAspectVM.AddNewD4Aspect(AspectNameEntry.Text , _aspectType , AspectCategoryPicker.SelectedItem.ToString() , 
+            App.DBManager.AddNewD4Aspect(AspectNameEntry.Text , _aspectType , AspectCategoryPicker.SelectedItem.ToString() , 
                 minVal , maxVal , StaticValue.Text);
 
             

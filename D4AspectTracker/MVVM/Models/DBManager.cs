@@ -2,11 +2,9 @@
 using D4AspectTracker.MVVM.Models;
 using System.Diagnostics;
 
-namespace D4AspectTracker.MVVM.ViewModels
+namespace D4AspectTracker.MVVM.Models
 {
-    // TODO i have accidentally conflated a viewmodel and a db utility class here. This is misnamed, should not be a vew model,
-    //      this becomes a singleton of the app, should be used by a viewmodel not be named a viewmodel
-    public class AddAspectViewModel
+    public class DBManager
     {
         private string _dbPath;
 
@@ -15,7 +13,7 @@ namespace D4AspectTracker.MVVM.ViewModels
         private SQLiteConnection _connection;
 
         // simple constructor that requires a path to stored database
-        public AddAspectViewModel(string dbPath)
+        public DBManager(string dbPath)
         {
             _dbPath = dbPath;
         }

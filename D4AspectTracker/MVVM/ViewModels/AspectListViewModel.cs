@@ -10,7 +10,7 @@ namespace D4AspectTracker.MVVM.ViewModels
 
         public AspectListViewModel() 
         {
-            AllAspects = new ObservableCollection<D4Aspect>(App.AddAspectVM.GetAllD4Aspects());
+            AllAspects = new ObservableCollection<D4Aspect>(App.DBManager.GetAllD4Aspects());
             /*
             Aspects = new ObservableCollection<D4Aspect>();
 
@@ -42,7 +42,7 @@ namespace D4AspectTracker.MVVM.ViewModels
         public void RefreshAllAspects()
         {
             // manually garbage collect here???
-            AllAspects = new ObservableCollection<D4Aspect>(App.AddAspectVM.GetAllD4Aspects());
+            AllAspects = new ObservableCollection<D4Aspect>(App.DBManager.GetAllD4Aspects());
         }
 
         public void OnAddAnotherD4Aspect(object sender, EventArgs e)

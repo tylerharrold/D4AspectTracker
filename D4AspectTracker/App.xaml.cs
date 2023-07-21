@@ -1,17 +1,17 @@
 ﻿using D4AspectTracker.MVVM.ViewModels;
-using D4AspectTracker.MVVM.Views;
+using D4AspectTracker.MVVM.Models;
 using System.Diagnostics;
 
 namespace D4AspectTracker;
 
 public partial class App : Application
 {
-	public static AddAspectViewModel AddAspectVM { get; private set; }
+	public static DBManager DBManager { get; private set; }
 
-	public App(AddAspectViewModel aavm)
+	public App(DBManager aavm)
 	{
 		InitializeComponent();
-        AddAspectVM = aavm;
+        DBManager = aavm;
         //MainPage = new NavigationPage(new D4AspectTracker.MVVM.Views.MainPage());
         MainPage = new NavigationPage(new D4AspectTracker.MVVM.Views.MainPageView());
 

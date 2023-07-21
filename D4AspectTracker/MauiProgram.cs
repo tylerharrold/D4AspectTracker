@@ -2,6 +2,7 @@
 using System.Text;
 using D4AspectTracker.Utility;
 using D4AspectTracker.MVVM.ViewModels;
+using D4AspectTracker.MVVM.Models;
 using System.Diagnostics;
 
 namespace D4AspectTracker;
@@ -27,7 +28,7 @@ public static class MauiProgram
 		string dbPath = @"V:\MAUI_db_testing\d4aspect_TESTING.db";
 		
         // use dependency injection to add singleton AddAspectViewModel class to application
-        builder.Services.AddSingleton<AddAspectViewModel>(s => ActivatorUtilities.CreateInstance<AddAspectViewModel>(s, dbPath));
+        builder.Services.AddSingleton<DBManager>(s => ActivatorUtilities.CreateInstance<DBManager>(s, dbPath));
 
 #if DEBUG
 		builder.Logging.AddDebug();
