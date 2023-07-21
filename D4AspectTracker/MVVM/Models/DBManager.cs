@@ -29,8 +29,10 @@ namespace D4AspectTracker.MVVM.Models
 
             // 
             _connection = new SQLiteConnection(_dbPath);
-            _connection.CreateTable<D4Aspect>(); // this will not create a new table if one already exists
+            // create tables if they do not already exist
+            _connection.CreateTable<D4Aspect>(); 
             _connection.CreateTable<User>();
+            _connection.CreateTable<AspectDrop>();
 
             
         }
@@ -74,6 +76,8 @@ namespace D4AspectTracker.MVVM.Models
 
             return new List<D4Aspect>();
         }
+
+        
 
 
 
