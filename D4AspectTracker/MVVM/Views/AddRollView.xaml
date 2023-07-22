@@ -8,5 +8,16 @@
                HeightRequest="100"/>
         <SearchBar  x:Name="schAspect"
                     Placeholder="Search Aspect Type..."/>
+        <ScrollView>
+            <CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+        <Button Text="Add Roll"/>
     </VerticalStackLayout>
 </ContentPage>

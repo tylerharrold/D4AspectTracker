@@ -13,27 +13,41 @@ namespace D4AspectTracker.MVVM.ViewModels
     {
 
         public ObservableCollection<D4Aspect> Aspects;
+        public ObservableCollection<D4Aspect> SearchResults { get; set; }
 
         public AddRollViewModel()
         {
             // grab all aspects 
             Aspects = new ObservableCollection<D4Aspect>(App.DBManager.GetAllD4Aspects());
+            SearchResults = new ObservableCollection<D4Aspect>();
         }
 
         public void OnSearchButtonPressed(object sender, EventArgs e)
         {
             SearchBar sb = (SearchBar)sender;
 
-            // search the aspects collection for an aspect matching the name 
+            SearchResults = GetSearchResults(sb.Text);
+
+        }
+
+        // TODO
+        // this search method needs to be way more tolerant, but its functional for now
+        private ObservableCollection<D4Aspect> GetSearchResults(string aspectName)
+        {
+            ObservableCollection<D4Aspect> results = new ObservableCollection<D4Aspect>();
+
             foreach(D4Aspect aspect in Aspects)
             {
-                if(aspect.AspectName == sb.Text)
+                if(aspect.AspectName.ToLower().Contains(aspectName.ToLower()))
                 {
-                    Debug.Print($"Found {aspect.AspectName}");
-                    break;
+                    // TODO is this by reference???
+                    results.Append(aspect);
+                    Debug.Print("Found a match");
+                        
                 }
             }
 
+            return results;
         }
 
 
