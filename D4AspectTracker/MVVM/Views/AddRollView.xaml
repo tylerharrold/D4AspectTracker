@@ -8,11 +8,14 @@
                HeightRequest="100"/>
         <SearchBar  x:Name="schAspect"
                     Placeholder="Search Aspect Type..."/>
-        <ScrollView>
-            <CollectionView>
-                <CollectionView.ItemTemplate>
+        <ScrollView HeightRequest="300">
+            <CollectionView ItemsSource="{Binding SearchResults}"
+                            SelectionMode="Single">
+                <CollectionView.ItemTemplate >
                     <DataTemplate>
-                        <Label/>
+                        <Grid>
+                            <Label Text="{Binding AspectName}"/>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
