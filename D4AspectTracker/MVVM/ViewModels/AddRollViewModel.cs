@@ -32,53 +32,65 @@ namespace D4AspectTracker.MVVM.ViewModels
         {
             SearchBar sb = (SearchBar)sender;
 
+            // if the search bar contains empty string, clear search results and return
+            if(string.IsNullOrEmpty(sb.Text))
+            {
+                ClearSearchResults();
+                return;
+            }
+
             // remove all current items from search results collection
             ClearSearchResults();
+            GetSearchResults(sb.Text);
 
+        }
+
+        public void OnSearchTextChanged(object sender, EventArgs e)
+        {
+            SearchBar sb = (SearchBar)sender;
+
+            if (string.IsNullOrEmpty(sb.Text))
+            {
+                ClearSearchResults();
+                return;
+            }
+
+            // remove all current items from search results collection
+            ClearSearchResults();
+            GetSearchResults(sb.Text);
+        }
+
+
+        // get search results
+        private void GetSearchResults(string s)
+        {
             // seems inelegant, but should work for now
             foreach (D4Aspect aspect in Aspects)
             {
-                if (aspect.AspectName.ToLower().Contains(sb.Text.ToLower()))
+                if (aspect.AspectName.ToLower().Contains(s.ToLower()))
                 {
                     // TODO is this by reference???
                     SearchResults.Add(aspect);
-                    
+
 
                 }
             }
-
-
-
-
-
         }
 
-        // TODO
-        // this function is at least temporarily defunct. This was assigning a new list
-        // to SearchResults, which would be fine, but the xaml data binding for collection view
-        // was lost because its event firing was coming from old, garbage collected list assinged 
-        // to search results. 
-        // this search method needs to be way more tolerant, but its functional for now
-        private ObservableCollection<D4Aspect> GetSearchResults(string aspectName)
-        {
-            ObservableCollection<D4Aspect> results = new ObservableCollection<D4Aspect>();
-            foreach(D4Aspect aspect in Aspects)
-            {
-                if(aspect.AspectName.ToLower().Contains(aspectName.ToLower()))
-                {
-                    // TODO is this by reference???
-                    results.Add(aspect);
-                    Debug.Print("Found a match");
-                        
-                }
-            }
-
-            return results;
-        }
-
+        // Clear search results list of entries
         private void ClearSearchResults()
         {
             SearchResults.Clear();
+        }
+
+        // handler for when an aspect template is selected to base new roll entry off of
+        public void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // enter text of selection into search bar
+
+            // clear other search items
+
+            // enable view that shows all information about the selected roll
         }
 
 

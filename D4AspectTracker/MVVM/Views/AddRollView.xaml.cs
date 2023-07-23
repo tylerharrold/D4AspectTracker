@@ -16,5 +16,9 @@ public partial class AddRollView : ContentPage
 
 		// bind search bar to event handler in viewmodel
 		schAspect.SearchButtonPressed += _viewModel.OnSearchButtonPressed;
+		schAspect.TextChanged += _viewModel.OnSearchTextChanged;
+
+		// bind collection view selection changed to handler
+		collectionView.SelectionChanged += _viewModel.OnCollectionViewSelectionChanged;
 	}
 }
