@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="D4AspectTracker.MVVM.Views.AddRollView"
+             xmlns:CustomControls="clr-namespace:D4AspectTracker.Controls"
+             x:Class="D4AspectTracker.MVVM.Views.AddRollView"   
              Title="AddRollView">
     <VerticalStackLayout>
         <Image Source="d4logo.png"
@@ -21,6 +22,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
+        <CustomControls:AspectTemplateControl></CustomControls:AspectTemplateControl>
 
         <Button Text="Add Roll"/>
     </VerticalStackLayout>
