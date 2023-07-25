@@ -23,6 +23,8 @@
             </CollectionView>
         </ScrollView>
         <CustomControls:AspectTemplateControl></CustomControls:AspectTemplateControl>
+        <Entry x:Name="rangedValueEntry" 
+               IsVisible="False"></Entry>
 
         <Button Text="Add Roll"/>
     </VerticalStackLayout>

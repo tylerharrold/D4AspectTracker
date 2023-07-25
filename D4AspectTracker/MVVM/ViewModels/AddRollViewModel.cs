@@ -1,4 +1,5 @@
-﻿using D4AspectTracker.MVVM.Models;
+﻿
+using D4AspectTracker.MVVM.Models;
 using D4AspectTracker.Utility;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace D4AspectTracker.MVVM.ViewModels
             { 
                 _selectedAspect = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedAspect"));
+                RangeOrValueAspectSelected?.Invoke(SelectedAspect.AspectType.ToString());
 
             } 
         }
@@ -40,8 +42,12 @@ namespace D4AspectTracker.MVVM.ViewModels
            
         }
 
-        // TODO delete this if i don't use it
+        // event handler for property changes
         public event PropertyChangedEventHandler PropertyChanged;
+
+        // custom event handler to enable the input of values for range and value types
+        public delegate void RangeOrValueAspectSelectedHandler(string type);
+        public event RangeOrValueAspectSelectedHandler RangeOrValueAspectSelected;
 
         
 
