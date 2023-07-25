@@ -16,8 +16,9 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         </HorizontalStackLayout>
-        <Label Text="{Binding SelectedAspect.AspectType , StringFormat={}{0} Type}"/>
-        <Label Text="{Binding SelectedAspect.AspectCategory , StringFormat={}{0} Aspect}"/>
+        <Label Text="{Binding SelectedAspect.AspectType , StringFormat='{0} Type' }"/>
+        <Label Text="{Binding SelectedAspect.AspectCategory , StringFormat='{0} Aspect'}"/>
         <Label Text="{Binding SelectedAspect.StaticValue}"/>
+   
     </VerticalStackLayout>
 </ContentView>
