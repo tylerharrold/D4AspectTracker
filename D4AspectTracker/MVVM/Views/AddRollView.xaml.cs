@@ -1,4 +1,5 @@
 using D4AspectTracker.MVVM.ViewModels;
+using System.ComponentModel;
 using System.Diagnostics;
 
 namespace D4AspectTracker.MVVM.Views;
@@ -28,6 +29,7 @@ public partial class AddRollView : ContentPage
 
 	}
 
+	
 	// TODO reconsider whether this is worth it or not
 	private void ClearSearchBar(object sender , SelectionChangedEventArgs e)
 	{
@@ -58,5 +60,47 @@ public partial class AddRollView : ContentPage
         }
 	}
 
-	
+	// this button should only be enabled if the state of the form allows for it (aspect selected and value entered if appropriate)
+    private async void btnAddRoll_Clicked(object sender, EventArgs e)
+    {
+		if (!NecessaryDataEntered())
+		{
+            await DisplayAlert("Required Fields Missing", "Please enter all required fields.", "OK");
+		}
+		else
+		{
+			// TODO this string should be sanitized and made to conform with selected aspect parameters
+			// TODO this needs to restrics the values between possible ranges
+			float value = 0.0f;
+			if (!string.IsNullOrEmpty(rangedValueEntry.Text))
+			{
+				value = float.Parse(rangedValueEntry.Text);
+			}
+            _viewModel.AddRoll(value);
+        }
+		
+		
+    }
+
+	// what an ugly method
+	public bool NecessaryDataEntered()
+	{
+
+		// if there is a selection
+		if(collectionView.SelectedItem != null)
+		{
+			// if the selection warrants a value entry
+			if (rangedValueEntry.IsVisible)
+			{
+				// if the entry isn't empty
+				if (!string.IsNullOrEmpty(rangedValueEntry.Text))
+				{
+					return true;
+				}
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
 }

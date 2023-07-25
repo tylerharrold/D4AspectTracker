@@ -27,8 +27,10 @@ namespace D4AspectTracker.MVVM.ViewModels
             set 
             { 
                 _selectedAspect = value;
+                // alert bound properties that we have a new selected aspect
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedAspect"));
-                RangeOrValueAspectSelected?.Invoke(SelectedAspect.AspectType.ToString());
+                // let any view that cares know that it might need to evaluate the aspect type
+                RangeOrValueAspectSelected?.Invoke(SelectedAspect?.AspectType.ToString());
 
             } 
         }
@@ -113,6 +115,12 @@ namespace D4AspectTracker.MVVM.ViewModels
 
             SelectedAspect = selected;
 
+        }
+
+        // method to add roll to database (of type currently selected roll) with the user entered value
+        public void AddRoll(float rollValue)
+        {
+            App.DBManager.AddNewDrop(1 , SelectedAspect.Id , rollValue);
         }
 
 

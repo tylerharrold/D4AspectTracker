@@ -62,6 +62,31 @@ namespace D4AspectTracker.MVVM.Models
             
         }
 
+        public void AddNewDrop(int userID, int aspectID, float value)
+        {
+            // set up Drop to insert
+            AspectDrop aspectDrop = new AspectDrop
+            {
+                UserId = userID,
+                AspectID = aspectID,
+                Value = value
+            };
+
+            int result = 0;
+            try
+            {
+                Init();
+
+                result = _connection.Insert(aspectDrop);
+            }
+            catch(Exception ex)
+            {
+                StatusMessage = ex.Message;
+            }
+
+
+        }
+
         public List<D4Aspect> GetAllD4Aspects()
         {
             try

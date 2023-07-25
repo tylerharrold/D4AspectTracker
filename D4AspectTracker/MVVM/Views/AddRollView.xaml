@@ -26,6 +26,8 @@
         <Entry x:Name="rangedValueEntry" 
                IsVisible="False"></Entry>
 
-        <Button Text="Add Roll"/>
+        <Button x:Name="btnAddRoll"
+                Text="Add Roll"
+                Clicked="btnAddRoll_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
