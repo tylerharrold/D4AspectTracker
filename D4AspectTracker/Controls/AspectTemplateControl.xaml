@@ -4,11 +4,11 @@
              x:Class="D4AspectTracker.Controls.AspectTemplateControl">
     <VerticalStackLayout>
         <Label 
-            Text="{Binding SelectedAspectName}"
+            Text="{Binding SelectedAspect.AspectName}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label Text="Aspect Type"/>
         <Label Text="Aspect Category"/>
-        <Label Text="This is the aspect description it will be very long and will require special color formatting"/>
+        <Label Text="{Binding SelectedAspect.StaticValue}"/>
     </VerticalStackLayout>
 </ContentView>

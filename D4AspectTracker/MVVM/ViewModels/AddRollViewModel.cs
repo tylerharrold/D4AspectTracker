@@ -26,25 +26,8 @@ namespace D4AspectTracker.MVVM.ViewModels
             set 
             { 
                 _selectedAspect = value;
-                SelectedAspectName = SelectedAspect.AspectName;
-            } 
-        }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedAspect"));
 
-        private string _selectedAspectName;
-        public string SelectedAspectName 
-        {
-            get
-            {
-                return _selectedAspectName;
-            }
-
-            set 
-            { 
-                if(_selectedAspectName != value)
-                {
-                    _selectedAspectName = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedAspectName"));
-                }
             } 
         }
 
@@ -54,9 +37,6 @@ namespace D4AspectTracker.MVVM.ViewModels
             Aspects = new ObservableCollection<D4Aspect>(App.DBManager.GetAllD4Aspects());
             SearchResults = new ObservableCollection<D4Aspect>();
 
-            //TODO DELETE
-            SelectedAspectName = "Test Aspect Selected Name";
-            SelectedAspectName = "Test Aspect Selected Name";
            
         }
 
@@ -127,7 +107,6 @@ namespace D4AspectTracker.MVVM.ViewModels
 
             SelectedAspect = selected;
 
-            Debug.Print(SelectedAspectName);
         }
 
 
