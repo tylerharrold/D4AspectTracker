@@ -35,6 +35,17 @@ namespace D4AspectTracker.MVVM.ViewModels
             } 
         }
 
+        private string _valueEntryText;
+        public string ValueEntryText
+        {
+            get { return _valueEntryText; }
+            set
+            {
+                _valueEntryText = value;
+                PropertyChanged?.Invoke(this , new PropertyChangedEventArgs(nameof(ValueEntryText)));
+            }
+        }
+
         public AddRollViewModel()
         {
             // grab all aspects 
