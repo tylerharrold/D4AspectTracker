@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:D4AspectTracker.MVVM.ViewModels"
+             x:Class="D4AspectTracker.MVVM.Views.WelcomeView"
+             Title="WelcomeView">
+    <ContentPage.BindingContext>
+        <viewmodel:WelcomeViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Image Source="d4logo.png"
+               HeightRequest="100"/>
+
+        <Button Text="User Login"
+                Command="{Binding NavButtonClicked}"
+                CommandParameter="Login"/>
+        <Button Text="Examine Diablo 4 Aspects"
+                Command="{Binding NavButtonClicked}"
+                CommandParameter="ExamineAspects"/>
+    </VerticalStackLayout>
+</ContentPage>
