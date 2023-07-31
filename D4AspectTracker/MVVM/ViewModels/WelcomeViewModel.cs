@@ -28,7 +28,7 @@ public class WelcomeViewModel: INotifyPropertyChanged
         {
             case "Login":
                 
-                navigation.PushAsync(new MainPageView());
+                navigation.PushAsync(new LoginView());
                 break;
             case "ExamineAspects":
                 navigation.PushAsync(new MainAspectPageView());
